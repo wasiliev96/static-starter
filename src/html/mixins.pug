@@ -1,0 +1,12 @@
+mixin picture(path, name, className, type)
+  picture(class=className)
+    each val in type
+      source(srcset=path + "/" + name + "." + val + ', ' + path + "/" + name + "@2x." + val + ' 2x' type="image/" + val)
+    img(src=path + "/" + name + ".jpg" alt=name)
+
+mixin img(path, name, className, type)
+    img(class=className srcset=path + "/" + name + "." + type + ', ' + path + "/" + name + "@2x." + type + ' 2x' src=path + "/" + name + "." + type)
+
+mixin svg-icon(name, width, height, fill='currentColor', stroke='currentColor')
+    svg(width=width height=height fill=fill stroke=stroke)
+        use(href='./img/sprite.svg#' + name)

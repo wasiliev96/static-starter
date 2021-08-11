@@ -1,0 +1,25 @@
+include ../mixins
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="./css/style.css")
+        block title
+            - var title = 'Empty page'
+        title #{title}
+    body 
+        include ../components/header
+        //Retina-ready <picture> example
+        //+picture('./img', 'about-director-mobile','test', ['png', 'webp'])
+
+        //Retina-ready <img> example
+        //+img('./img', 'about-director-mobile','test', 'png')
+
+        //Sprite svg example
+        //+svg-icon('mobile-slider-arrow', 17, 15)
+
+        include ../components/footer
+        
